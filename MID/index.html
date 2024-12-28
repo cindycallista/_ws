@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySongDiary</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://sdk.scdn.co/spotify-player.js"></script> <!-- Spotify Web Playback SDK -->
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>MySongDiary</h1>
+        </header>
+
+        <!-- Authentication Section -->
+        <main id="authPage" class="content-section">
+            <h2 id="authTitle">Register</h2>
+            <form id="authForm" class="form">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+
+                <button type="submit" id="authBtn" class="btn primary">Register</button>
+            </form>
+            <p id="toggleText">Already have an account? <span id="toggleLink" class="link">Login here</span></p>
+        </main>
+
+        <!-- Login Section -->
+        <main id="loginPage" class="content-section hidden">
+            <h2>Login</h2>
+            <form id="loginForm" class="form">
+                <label for="loginUsername">Username</label>
+                <input type="text" id="loginUsername" placeholder="Enter your username" required>
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+                <button type="submit" id="loginBtn" class="btn primary">Login</button>
+            </form>
+            <p>Don't have an account? <span id="registerLink" class="link">Register here</span></p>
+        </main>
+
+        <!-- Create Post Section -->
+        <main id="createPostPage" class="content-section hidden">
+            <header class="post-header">
+                <button id="logoutBtn" class="btn secondary">Logout</button>
+                <p>Welcome, <span id="usernameDisplay"></span></p>
+            </header>
+
+            <section>
+                <h2>Create a Post</h2>
+                <form id="postForm" class="form">
+
+
+                    <label for="caption">Caption</label>
+                    <textarea id="caption" placeholder="Your message..." required></textarea>
+                    <label for="songSearch">Search for a song:</label>
+                    <input type="text" id="songSearch" placeholder="Enter song name" required>
+
+                    <button type="submit" class="btn primary">Post</button>
+                </form>
+            </section>
+
+            <section id="postList" class="post-list">
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
